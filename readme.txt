@@ -1,0 +1,1 @@
+The full requirements for NJC I & NJC II are chicago dlc + new flyer mod, simple streets and willshire.
