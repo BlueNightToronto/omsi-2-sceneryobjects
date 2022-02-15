@@ -1,0 +1,120 @@
+
+
+{init}
+	0 10 random (S.L.ad)
+	1 (S.L.Active)
+{end}
+
+
+{frame}
+
+0 (S.L.dep_cnt)
+
+'ZEILE 1 ==============================================
+
+'Zuerst prüfen, ob das Ziel valide ist:
+
+	(L.L.dep_cnt) (M.V.GetArrBusTerminus) "" $= !
+	{if}
+		(L.L.dep_cnt) (M.V.GetArrBusTerminus) (L.$.chicago_special) $= !
+			{if}
+				(L.L.dep_cnt) (M.V.GetArrBusTerminus) 28 $SetLengthL $+ "   " $+
+			
+				(L.L.dep_cnt) (M.V.GetArrBusTimeDiff) 60 / s0
+				
+				l0 1.0 <		
+					{if}
+						"DUE" $+
+					{else}
+						l0 0 max " 2" $IntToStrEnh $+ "m" $+
+					{endif}	
+					
+				"@" $+	
+			{endif}		
+	{endif}
+
+	(L.L.dep_cnt) 1 + (S.L.dep_cnt)
+	
+'ZEILE 2 ==============================================
+
+'Zuerst prüfen, ob das Ziel valide ist:
+
+	(L.L.dep_cnt) (M.V.GetArrBusTerminus) "" $= !
+	{if}
+		(L.L.dep_cnt) (M.V.GetArrBusTerminus) (L.$.chicago_special) $= !
+			{if}
+				(L.L.dep_cnt) (M.V.GetArrBusTerminus) 28 $SetLengthL $+ "   " $+
+			
+				(L.L.dep_cnt) (M.V.GetArrBusTimeDiff) 60 / s0
+				
+				l0 1.0 <		
+					{if}
+						"DUE" $+
+					{else}
+						l0 0 max " 2" $IntToStrEnh $+ "m" $+
+					{endif}
+					
+				"@" $+		
+			{endif}			
+	{endif}
+
+	(L.L.dep_cnt) 1 + (S.L.dep_cnt)
+	
+
+'ZEILE 3 ==============================================
+
+'Zuerst prüfen, ob das Ziel valide ist:
+
+	(L.L.dep_cnt) (M.V.GetArrBusTerminus) "" $= !
+	{if}
+		(L.L.dep_cnt) (M.V.GetArrBusTerminus) (L.$.chicago_special) $= !
+			{if}
+				(L.L.dep_cnt) (M.V.GetArrBusTerminus) 28 $SetLengthL $+ "   " $+
+			
+				(L.L.dep_cnt) (M.V.GetArrBusTimeDiff) 60 / s0
+				
+				l0 1.0 <		
+					{if}
+						"DUE" $+
+					{else}
+						l0 0 max " 2" $IntToStrEnh $+ "m" $+
+					{endif}
+					
+				"@" $+		
+			{endif}		
+	{endif}
+
+	(L.L.dep_cnt) 1 + (S.L.dep_cnt)	
+	
+
+'ZEILE 4 ==============================================
+
+'Zuerst prüfen, ob das Ziel valide ist:
+
+	(L.L.dep_cnt) (M.V.GetArrBusTerminus) "" $= !
+	{if}
+		(L.L.dep_cnt) (M.V.GetArrBusTerminus) (L.$.chicago_special) $= !
+			{if}
+				(L.L.dep_cnt) (M.V.GetArrBusTerminus) 28 $SetLengthL $+ "   " $+
+			
+				(L.L.dep_cnt) (M.V.GetArrBusTimeDiff) 60 / s0
+				
+				l0 1.0 <		
+					{if}
+						"DUE" $+
+					{else}
+						l0 0 max " 2" $IntToStrEnh $+ "m" $+
+					{endif}	
+			{endif}			
+	{endif}			
+
+
+'AUSGABE ==============================================
+
+	(S.$.busstop_string)
+
+	1 (S.L.Refresh_Strings)
+
+
+{end}
+

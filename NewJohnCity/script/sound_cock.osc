@@ -1,0 +1,40 @@
+'######################
+'Cock script
+'######################
+
+'Cock calls at sunrise
+
+'(c) 29.10.2013 Marcel Kuhnt
+
+'Needs:
+'- none
+
+'Revision History:
+'	29.10.2013	Marcel Kuhnt	Created Script
+
+
+{init}
+	-1 (S.L.nextcall)
+	(M.L.setcounter)	
+{end}
+
+
+{frame}
+'Hahn ist armed:
+		(L.L.nextcall) (L.S.Time) <
+		{if}
+			(T.L.cock)
+			(L.L.counter) 1 - (S.L.counter)
+			0 <=
+			{if}
+				(L.S.Time) 2 random 3 + 2 * + (S.L.nextcall)
+				(M.L.setcounter)
+			{else}
+				(L.S.Time) 10 random 10 + + (S.L.nextcall)
+			{endif}
+		{endif}
+{end}
+
+{macro:setcounter}
+	3 random 1 + (S.L.counter)
+{end}
